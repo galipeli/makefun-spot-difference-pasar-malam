@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pasar Malam — Cari Perbedaannya</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hud">
+  <div class="hud-title">🌙 Pasar Malam <span class="hud-sub">· Cari Perbedaannya</span></div>
+  <div id="hud-level" class="hud-pill">Level 1 · Gerobak Sate</div>
+  <div id="hud-remaining" class="hud-pill counter">Sisa: 8</div>
+  <div id="hud-timer" class="hud-pill">2:30</div>
+  <div id="hud-score" class="hud-pill">Skor: 0</div>
+  <div id="hud-hints" class="hud-pill">Hint: 3</div>
+</header>
+
+<main id="boards">
+  <div class="panel-wrap">
+    <canvas id="panel-left" width="600" height="540"></canvas>
+  </div>
+  <div class="panel-gap">VS</div>
+  <div class="panel-wrap">
+    <canvas id="panel-right" width="600" height="540"></canvas>
+  </div>
+</main>
+
+<footer id="controls">
+  <div id="message">Pilih level, lalu klik perbedaan di panel kiri atau kanan.</div>
+  <div class="buttons">
+    <button id="hint-button" type="button">💡 Hint (H)</button>
+    <button id="restart-button" type="button">↻ Ulangi Level (R)</button>
+    <button type="button" data-level="0">Level 1</button>
+    <button type="button" data-level="1">Level 2</button>
+    <button type="button" data-level="2">Level 3</button>
+  </div>
+  <div class="help">Klik perbedaan di panel mana pun · H = hint · R = ulangi level · 1/2/3 = ganti level · Klik salah −3 detik</div>
+</footer>
+
+<div id="overlay" class="hidden">
+  <div class="overlay-card">
+    <h1 id="overlay-title">Pasar Malam</h1>
+    <p id="overlay-text"></p>
+    <button id="overlay-button" type="button">Mulai Main</button>
+  </div>
+</div>
+
+<script src="src/differences.js"></script>
+<script src="src/scenes.js"></script>
+<script src="src/render.js"></script>
+<script src="src/timer.js"></script>
+<script src="src/hud.js"></script>
+<script src="src/input.js"></script>
+<script src="src/sounds.js"></script>
+<script src="src/shots.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>

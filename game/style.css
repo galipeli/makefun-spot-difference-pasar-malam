@@ -1,0 +1,137 @@
+/* style.css — tampilan Pasar Malam: latar malam, panel berdampingan, HUD kontras tinggi. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #120a24;
+  color: #f5e6c8;
+  font-family: "Segoe UI", Verdana, sans-serif;
+  min-height: 100vh;
+}
+
+#hud {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: #1e1238;
+  border-bottom: 2px solid #3d2a6e;
+}
+
+.hud-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+.hud-sub { font-size: 14px; font-weight: 400; color: #c9b8e8; }
+
+.hud-pill {
+  background: #2c1c52;
+  border: 1px solid #4d3a86;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.hud-pill.counter {
+  background: #e2483d;
+  border-color: #ff8a80;
+  color: #fff;
+  font-size: 19px;
+  padding: 8px 18px;
+}
+
+#hud-timer.urgent {
+  background: #e2483d;
+  border-color: #ff8a80;
+  color: #fff;
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0.55; } }
+
+#boards {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 8px 4px;
+}
+
+.panel-wrap {
+  border: 3px solid #4d3a86;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+canvas { display: block; width: 600px; height: 540px; cursor: crosshair; }
+
+.panel-gap {
+  align-self: center;
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffd166;
+}
+
+#controls { padding: 8px 16px 12px; text-align: center; }
+
+#message {
+  font-size: 16px;
+  min-height: 24px;
+  margin-bottom: 8px;
+  color: #ffe9a8;
+}
+
+#message.flash { animation: pop 0.3s ease; }
+
+@keyframes pop { 0% { transform: scale(1.06); } 100% { transform: scale(1); } }
+
+.buttons { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+
+button {
+  background: #3d2a6e;
+  color: #f5e6c8;
+  border: 1px solid #6b52b3;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) { background: #4d3a86; }
+button:disabled { opacity: 0.45; cursor: default; }
+
+.help { margin-top: 8px; font-size: 13px; color: #b8a8d8; }
+
+#overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 6, 24, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#overlay.hidden { display: none; }
+
+.overlay-card {
+  background: #241640;
+  border: 2px solid #6b52b3;
+  border-radius: 16px;
+  padding: 32px 44px;
+  text-align: center;
+  max-width: 560px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+}
+
+.overlay-card h1 { margin: 0 0 12px; font-size: 34px; color: #ffd166; }
+.overlay-card p { font-size: 17px; line-height: 1.5; margin: 0 0 20px; }
+.overlay-card button { font-size: 18px; padding: 12px 28px; background: #e2483d; border-color: #ff8a80; }
